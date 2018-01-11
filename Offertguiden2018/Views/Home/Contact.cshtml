@@ -1,17 +1,45 @@
 ﻿@{
     ViewData["Title"] = "Contact";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+<style>
+    body {
+        line-height: 26px;
+        font-family: Verdana;
+    }
+    .img-responsive {
+            display: block;
+            margin: auto;
+            height: 160px;
+    }
+    .h2n{
+        padding-top: 5%;
+        text-align: center;
+        
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+    }
+   .h4n {
+       padding-bottom: 5%;
+        text-align: center;
+        color: gray;
+    }
+</style>
 
-<address>
+<div class="col-md-12" id="background">
+    <br /><br /><br /><br />
+    <img class="img-responsive" src="~/images/Offertguidenloggan.png" />
+    <br />
+   
+    <h4 class="h4n">Kontakta oss med frågor och funderingar. Vi svarar inom en timme. E-post och telefonnummer finner du nedan. <br />
+                    Vi är tillgängliga varje dag 08.00-20.00.</h4>
+</div>
+
+
+
+@*<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>*@
+
+
+@*<address>
     <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+</address>y*@

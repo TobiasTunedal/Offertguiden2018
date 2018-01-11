@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Offertguiden.Models.Reference>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br /><br /><br />
+
+<h2>Referenser</h2>
+
+<p>
+    <a asp-action="Create">Skapa ny Referens</a>
+</p>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReferenceId">Ändra</a> |
+                <a asp-action="Details" asp-route-id="@item.ReferenceId">Se Referensen</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReferenceId">Ta Bort</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div>
+    <a asp-area="" asp-controller="Home" asp-action="LoggedIn">Tillbaka</a>
+</div>

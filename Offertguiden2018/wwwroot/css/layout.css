@@ -1,0 +1,55 @@
+﻿
+.brand-image {
+    height: 385px;
+}
+
+.navbar-nav li {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-right: 35px;
+    font-size: 16px;
+}
+
+.navbar-header {
+    font-family: ubuntu;
+}
+
+.navbar.navbar-default {
+    background-color: white;
+    box-shadow: 2px -2px 100px rgba(0,0,0,.5);
+}
+
+.navbar-brand {
+    margin-top: -20px;
+}
+
+.nav a:hover {
+    color: chartreuse !important;
+}
+.team{
+    padding-top: 15%;
+}
+
+
+@media screen and (max-width: 767px) {
+    body{
+        text-align: center;
+    }
+    .brand-image{
+       display: none;
+    }
+    .navbar-brand {
+        display: none;
+    }
+    #aaLogo{
+        display: none;
+        
+    }
+    .footerH4{
+        padding-top:10%;
+    }
+    #loggaIn {
+        display: none;
+    }
+    
+}

@@ -1,0 +1,42 @@
+﻿body {
+    padding-top: 10%;
+    line-height: 26px;
+    font-family: Verdana;
+}
+
+.refPic {
+    display: block;
+    margin: auto;
+    height: 530px;
+    max-width: 100%;
+    padding-top: 2%;
+}
+
+#center {
+    text-align: center;
+}
+
+.h4Ref {
+    padding-top: 18%;
+}
+
+#borderLeft {
+    padding-top: 20%;
+    border-left: 1px double;
+    height: 1000px;
+    opacity: 0.1;
+}
+
+@media screen and (max-width: 767px) {
+
+    .refPic {
+        height: 223px;
+        max-width: 100%;
+    }
+    #borderLeft{
+        display: none;
+    }
+    h2{
+        padding-top: 60px;
+    }
+}

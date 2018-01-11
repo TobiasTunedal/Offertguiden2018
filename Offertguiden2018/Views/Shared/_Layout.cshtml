@@ -1,23 +1,57 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+<!DOCTYPE html>
 <html>
+
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Offertguiden2018</title>
 
-    <environment include="Development">
+    <title>@ViewData["Title"] - OffertguidenWebsite</title>
+    <link rel="stylesheet" type="text/css" href="~/css/layout.css">
+    <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
-    <environment exclude="Development">
+    <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+    @Html.Raw(JavaScriptSnippet.FullScript)
+
+    <style>
+        a:hover {
+            text-decoration: none;
+        }
+        .navbar-default {
+            border-bottom: none;
+            opacity: 0.93;
+        }
+        .team {
+            padding-top: 15%;
+        }
+        #footerCopyright {
+            text-align: center;
+        }
+        .brand-image {
+            margin-top: 6%;
+            height: 305%;
+        }
+
+        .navbar-nav li {
+        font-size: 17px;
+        }
+        .nav a:hover {
+            color: limegreen !important;
+        }
+     
+    </style>
+    
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -26,31 +60,135 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Offertguiden2018</a>
+
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img class="brand-image" alt="Website Logo" src="~/images/Offertguidenloggan.png"/>
+                </a>
+
+
+
+
+
+               
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Hem</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="OmOss">Om Oss</a></li>
+                    <li><a class="dropdown-toggle" data-toggle="dropdown" asp-area="" asp-controller="Home" asp-action="Tjanster">Tjänster</a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Home" asp-action="Bostadsrattsforening">Bostadsrättsförening</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Privatkund">Privatkund</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Foretagskund">Företagskund</a></li>
+                        </ul>
+                    </li>
+                    @*<li><a asp-area="" asp-controller="References" asp-action="References">Referenser</a></li>
+                    <li><a asp-area="" asp-controller="Blogs" asp-action="Blogs">Blogg</a></li>*@
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Kontakt</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+
         <footer>
-            <p>&copy; 2018 - Offertguiden2018</p>
-        </footer>
+            <div class="col-md-12">
+            <br />
+            <hr />
+            
+            </div>
+            <div class="col-md-3">
+                <h4 class="footerH4"><b>Kontakt</b></h4>
+            <p>
+                
+                <a href="mailto:info@offertguiden.com">info@offertguiden.com</a><br />
+                
+                08 - 121 469 63
+                <br />
+                070 - 775 29 99
+                <br /><br />
+                <b>Stockholm</b>
+                <br />
+                Wergelandsgatan 28
+                <br />
+                168 28 Bromma
+               
+            </p>   <br />
+
+            </div>
+
+
+            <div class="col-md-3">
+                <h4 class="footerH4"><b>Följ oss på</b></h4>
+                <p>
+                    <a href="https://www.facebook.com/offertguiden/">Facebook</a><br />
+                    <a href="https://www.instagram.com/offertguiden/">Instagram</a><br />
+                    <a href="https://twitter.com/OffertGuiden">Twitter</a><br />
+                    
+                </p>
+            </div>
+
+            <div class="col-md-3">
+                <h4 class="footerH4"><b>Team</b></h4>
+               <p>
+                <b>Jan Holopainen</b>
+                   <br />
+                VD
+                   <br />
+                   <a href="mailto:janne@offertguiden.com">janne@offertguiden.com</a><br />
+                070 - 441 30 37
+                </p>
+
+                <p class="team">
+                    <b>Ronnie Lindblad</b><br />
+                    Sälj & Projektering<br />
+                    <a href="mailto:ronnie@offertguiden.com">ronnie@offertguiden.com</a>
+                    <br />
+                    072 - 323 85 35
+                </p>
+
+                <p class="team">
+                    <b>Marcus Grimsrud</b>
+                    <br />
+                    Sälj & Projektering
+                    <br />
+                    <a href="mailto:marcus@offertguiden.com">marcus@offertguiden.com</a>
+                    <br />
+                    076 - 006 63 10
+                </p>
+                
+            </div>
+
+
+            <div class="col-md-3">
+
+                <a href="http://www.soliditet.se/lang/sv_SE/RatingGuideline" target="_blank" style="text-decoration: none;"><img style="border:0px; float: left;" oncontextmenu="return false" title="Vi &auml;r ett kreditv&auml;rdigt f&ouml;retag enligt Bisnodes v&auml;rderingssystem som baserar sig p&aring; en m&auml;ngd olika beslutsregler. Denna uppgift &auml;r alltid aktuell&#44; informationen uppdateras dagligen via Bisnodes databas." alt="Vi &auml;r ett kreditv&auml;rdigt f&ouml;retag enligt Bisnodes v&auml;rderingssystem som baserar sig p&aring; en m&auml;ngd olika beslutsregler. Denna uppgift &auml;r alltid aktuell&#44; informationen uppdateras dagligen via Bisnodes databas." id="aaLogo" src="http://merit.soliditet.se/merit/imageGenerator/display?lang=SE&country=SE&cId=kiHXHSMYKv%2FkM7Ubyt8aFg%3D%3D&cUid=EhZ89c%2B10Lo%3D&imgType=img_273_73_px_tr1" /></a>
+                <br />
+
+            </div>
+            <div class="col-md-12" id="footerCopyright">
+                <hr />
+                <a asp-area="" asp-controller="Home" asp-action="Login" id="loggaIn">Logga in</a>
+                <br />
+                    Copyright &copy;
+                    <script type="text/javascript">
+                        var d = new Date()
+                        document.write(d.getFullYear())
+                    </script> Offertguiden
+
+
+            </div>
+
+</footer>
     </div>
 
-    <environment include="Development">
+    <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
-    <environment exclude="Development">
+    <environment names="Staging,Production">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
@@ -67,5 +205,10 @@
     </environment>
 
     @RenderSection("Scripts", required: false)
+
+
 </body>
+
 </html>
+
+

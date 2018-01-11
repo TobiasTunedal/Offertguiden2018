@@ -1,0 +1,46 @@
+﻿@model Offertguiden.Models.Blog
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<br /><br /><br />
+
+<h2>Ta bort</h2>
+
+<h3>Är du säker på att du vill ta bort detta?</h3>
+<div>
+    <h4>Blogginlägget</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Picture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Picture)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="BlogId" />
+        <input type="submit" value="Ta bort" class="btn btn-default" /> |
+        <a asp-action="Index">Tillbaka till listan</a>
+    </form>
+</div>

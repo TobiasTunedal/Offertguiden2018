@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Offertguiden.Models.Reference>
+
+@{
+    ViewData["Title"] = "References";
+}
+
+<style>
+    body {
+        line-height: 26px;
+        font-family: Verdana;
+    }
+
+    .refPic {
+        height: 170px;
+        max-width: 270px;
+    }
+
+    #center {
+        text-align: center;
+    }
+
+    #item img {
+        max-width: 100%;
+        -moz-transition: all 1.3s;
+        -webkit-transition: all 1.3s;
+        transition: all 1.3s;
+    }
+
+    #item:hover img {
+        -moz-transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+
+
+<br />
+<br />
+<br />
+
+<div class="col-md-12">
+    <h2 id="center"> Offertguidens Referenser</h2>
+    <br />
+
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-3" id="item">
+        
+            <a asp-action="Details" asp-route-id="@item.ReferenceId">
+            <img class="refPic" src="@Html.DisplayFor(modelItem => item.Picture)" alt="Refbild" />
+            <h4 id="center">@Html.DisplayFor(modelItem => item.Title)</h4>
+        </a>
+    </div>
+}

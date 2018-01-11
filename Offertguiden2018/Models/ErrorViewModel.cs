@@ -1,6 +1,7 @@
 using System;
 
-namespace Offertguiden2018.Models
+
+namespace Offertguiden.Models
 {
     public class ErrorViewModel
     {

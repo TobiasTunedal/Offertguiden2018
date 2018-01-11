@@ -1,0 +1,42 @@
+﻿@model Offertguiden.Models.Reference
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<style>
+    body {
+        padding-top: 10%;
+        line-height: 26px;
+        font-family: Verdana;
+    }
+
+    .refPic {
+        height: 450px;
+        max-width: 100%;
+        padding-top: 2%;
+    }
+
+    #center {
+        text-align: center;
+    }
+
+    .h4Ref {
+        padding-top: 18%;
+    }
+</style>
+
+<div class="col-md-8">
+    <h2>@Html.DisplayFor(model => model.Title)</h2>
+
+    <img class="refPic" src="@Html.DisplayFor(model => model.Picture)" />
+</div>
+
+<div class="col-md-4">
+
+    <h4 class="h4Ref">Om projektet</h4>
+    <p>
+        @Html.DisplayFor(model => model.Text)
+    </p>
+</div>
